@@ -1,0 +1,26 @@
+.cardCollection__div_lg {
+    border: 1px black solid;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.cardHeader__div_lg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cardTimePrice__div_lg {
+    font-weight: bold;
+}
+
+.cardButton__btn_lg {
+    padding: .5em;
+    height: 100%;
+}
+
+.cardTimePrice__div_lg {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3em;
+}
