@@ -1,2 +1,0 @@
-# Itinerary-Maker
-Practice Exercise 
