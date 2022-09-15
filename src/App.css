@@ -1,0 +1,25 @@
+body {
+    margin-top: 2em;
+    margin-bottom: 2em; 
+    margin-left: .5em;
+    margin-right: 3em; 
+}
+
+.price__span_lg {
+    margin-left: 2em;
+}
+
+.multiple__button_lg {
+    margin: .3em;
+}
+
+.mainCardCollection__main_lg {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 20%;
+}
+
+/* .itineraryCollection__div_lg {
+
+} */
