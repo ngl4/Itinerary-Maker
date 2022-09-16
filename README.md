@@ -1,3 +1,6 @@
+#Itinerary Maker
+This is an exercise to practice! :)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
