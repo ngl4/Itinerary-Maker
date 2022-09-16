@@ -63,10 +63,10 @@ function App() {
         <div>
           <h2>Available Attractions</h2>
           {console.log(data.attractions)}
-          {availableAttractions.map((place, index) => {
+          {availableAttractions.map((place) => {
             return (
               <Card
-                key={index}
+                key={place.name}
                 name={place.name}
                 time={place.time}
                 price={PriceOptions[place.price]}
@@ -78,18 +78,6 @@ function App() {
         </div>
         <div className="itineraryCollection__div_lg">
           <h2>Current Itinerary</h2>
-          {/* {data.attractions.map((place, index) => {
-            return (
-              <Card
-                key={index}
-                name={place.name}
-                time={place.time}
-                price={place.price}
-                description={place.description}
-                handleCardButtonClick={handleCardButtonClick}
-              />
-            );
-          })} */}
         </div>
       </main>
     </div>
