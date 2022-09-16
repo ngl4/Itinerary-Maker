@@ -6,13 +6,14 @@ export default function Card({
   time,
   description,
   handleCardButtonClick,
+  buttonName
 }) {
   return (
     <div className="cardCollection__div_lg">
       <div className="cardHeader__div_lg">
         <h3>{name}</h3>
-        <button className="cardButton__btn_lg" onClick={handleCardButtonClick}>
-          "Add+"
+        <button className="cardButton__btn_lg" onClick={() => handleCardButtonClick(name)}>
+          {buttonName}
         </button>
       </div>
       <div className="cardTimePrice__div_lg">
