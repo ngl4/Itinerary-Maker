@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import DropdownInput from "./components/DropdownInput";
 import data from "./data.json";
-import { TimeOptions } from "./options/TimeOptions";
-import { PriceOptions } from "./options/PriceOptions";
+import { TimeOptions, PriceOptions } from "./options/Options";
 import MultipleButtonsInput from "./components/MultipleButtonsInput";
 import Card from "./components/Card";
 

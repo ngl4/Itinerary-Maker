@@ -1,0 +1,2 @@
+export const PriceOptions = ["Free", "$", "$$", "$$$"];
+export const TimeOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
