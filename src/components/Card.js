@@ -2,7 +2,6 @@ import Button from "./Button";
 import "./Card.css";
 
 export default function Card({
-  keyId,
   name,
   price,
   time,
@@ -13,7 +12,11 @@ export default function Card({
     <div className="cardCollection__div_lg" key={keyId}>
       <div className="cardHeader__div_lg">
         <h3>{name}</h3>
-        <Button text="Add+" handleClick={handleCardButtonClick} customStyling="cardButton__btn_lg"/>
+        <Button
+          text="Add+"
+          handleClick={handleCardButtonClick}
+          customStyling="cardButton__btn_lg"
+        />
       </div>
       <div className="cardTimePrice__div_lg">
         <span>{price}</span>

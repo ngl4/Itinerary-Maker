@@ -60,7 +60,7 @@ function App() {
           {availableAttractions.map((place, index) => {
             return (
               <Card
-                keyId={index}
+                key={index}
                 name={place.name}
                 time={place.time}
                 price={PriceOptions[place.price]}
@@ -75,7 +75,7 @@ function App() {
           {data.attractions.map((place, index) => {
             return (
               <Card
-                keyId={index}
+                key={index}
                 name={place.name}
                 time={place.time}
                 price={place.price}
