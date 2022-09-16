@@ -11,7 +11,7 @@ export default function MultipleButtonsInput({
         return (
           <button
             key={index}
-            onClick={(e) => handleClick(e, index)}
+            onClick={() => handleClick(index)}
             className={customButtonStyling}
           >
             {name}

@@ -21,12 +21,10 @@ function App() {
   const handleChangeHours = (e) => {
     setTotalTime(e.target.value);
   };
-  const handlePriceClicked = (e, priceValue) => {
-    e.preventDefault();
+  const handlePriceClicked = (priceValue) => {
     setTargetPrice(priceValue);
   };
-  const handleCardButtonClick = (e) => {
-    e.preventDefault();
+  const handleCardButtonClick = () => {
     console.log("click");
   };
   return (

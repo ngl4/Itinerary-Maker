@@ -2,10 +2,10 @@ export default function DropdownInput({ title, options, handleChange }) {
   return (
     <>
       <span>{title}</span>
-      <select onChange={(e) => handleChange(e)}>
-        {options.map((time, index) => {
+      <select onChange={handleChange}>
+        {options.map((time) => {
           return (
-            <option key={index} value={index + 1}>
+            <option key={time} value={time}>
               {time} {time === 1 ? "hour" : "hours"}
             </option>
           );
