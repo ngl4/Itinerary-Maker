@@ -1,10 +1,11 @@
+/* eslint-disable */
 import "./MultipleButtonsInput.css";
 export default function MultipleButtonsInput({
   title,
   buttonOptions,
   handleClick,
   className,
-  selectedPrice
+  selectedPrice,
 }) {
   return (
     <>

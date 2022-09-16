@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+/* eslint-disable */
+import { useState } from "react";
 import "./App.css";
 import DropdownInput from "./components/DropdownInput";
 import data from "./data.json";
@@ -15,10 +16,6 @@ function App() {
     data.attractions
   );
   const [currentItinerary, setCurrentItinerary] = useState([]);
-
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   const handleChangeHours = (e) => {
     setTotalTime(e.target.value);
@@ -78,22 +75,18 @@ function App() {
             buttonOptions={PriceOptions}
             handleClick={handlePriceClicked}
             className="multiple__button_lg"
-            selectedPrice = {selectedPrice}
+            selectedPrice={selectedPrice}
           />
         </span>
         <span className="price__span_lg">
-          <strong>Current Time:</strong> {currItineraryTime} <strong>Target Time:</strong>{" "}
-          {totalTime}
+          <strong>Current Time:</strong> {currItineraryTime}{" "}
+          <strong>Target Time:</strong> {totalTime}
         </span>
-        {/* <button onClick={() => console.log(totalTime, targetPrice)}>
-          submit
-        </button> */}
       </header>
       <hr />
       <main className="mainCardCollection__main_lg">
         <div>
           <h2>Available Attractions</h2>
-          {console.log(data.attractions)}
           {availableAttractions.map((place) => {
             return (
               <Card
