@@ -1,8 +1,10 @@
+import "./MultipleButtonsInput.css";
 export default function MultipleButtonsInput({
   title,
   buttonOptions,
   handleClick,
-  customButtonStyling,
+  className,
+  selectedPrice
 }) {
   return (
     <>
@@ -11,8 +13,10 @@ export default function MultipleButtonsInput({
         return (
           <button
             key={index}
-            onClick={() => handleClick(index)}
-            className={customButtonStyling}
+            onClick={() => handleClick(name, index)}
+            className={
+              className + ` ` + `${selectedPrice === name ? "selected" : ""}`
+            }
           >
             {name}
           </button>

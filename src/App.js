@@ -8,7 +8,9 @@ import Card from "./components/Card";
 
 function App() {
   const [totalTime, setTotalTime] = useState(0);
+  const [currItineraryTime, setCurrItineraryTime] = useState(0);
   const [targetPrice, setTargetPrice] = useState(0);
+  const [selectedPrice, setSelectedPrice] = useState("");
   const [availableAttractions, setAvailableAttractions] = useState(
     data.attractions
   );
@@ -21,8 +23,9 @@ function App() {
   const handleChangeHours = (e) => {
     setTotalTime(e.target.value);
   };
-  const handlePriceClicked = (priceValue) => {
+  const handlePriceClicked = (priceText, priceValue) => {
     setTargetPrice(priceValue);
+    setSelectedPrice(priceText); 
   };
   const handleCardButtonClick = () => {
     console.log("click");
@@ -43,8 +46,13 @@ function App() {
             title="Price: "
             buttonOptions={PriceOptions}
             handleClick={handlePriceClicked}
-            customButtonStyling="multiple__button_lg"
+            className="multiple__button_lg"
+            selectedPrice = {selectedPrice}
           />
+        </span>
+        <span className="price__span_lg">
+          <strong>Current Time:</strong> {currItineraryTime} <strong>Target Time:</strong>{" "}
+          {totalTime}
         </span>
         {/* <button onClick={() => console.log(totalTime, targetPrice)}>
           submit
@@ -70,7 +78,7 @@ function App() {
         </div>
         <div className="itineraryCollection__div_lg">
           <h2>Current Itinerary</h2>
-          {data.attractions.map((place, index) => {
+          {/* {data.attractions.map((place, index) => {
             return (
               <Card
                 key={index}
@@ -81,7 +89,7 @@ function App() {
                 handleCardButtonClick={handleCardButtonClick}
               />
             );
-          })}
+          })} */}
         </div>
       </main>
     </div>
