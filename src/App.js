@@ -17,6 +17,8 @@ function App() {
   );
   const [currentItinerary, setCurrentItinerary] = useState([]);
 
+  //TODO: Accumulated Time (inc Current Time)
+
   const handleChangeHours = (e) => {
     setTotalTime(e.target.value);
   };
