@@ -1,4 +1,3 @@
-import Button from "./Button";
 import "./Card.css";
 
 export default function Card({
@@ -9,14 +8,12 @@ export default function Card({
   handleCardButtonClick,
 }) {
   return (
-    <div className="cardCollection__div_lg" key={keyId}>
+    <div className="cardCollection__div_lg">
       <div className="cardHeader__div_lg">
         <h3>{name}</h3>
-        <Button
-          text="Add+"
-          handleClick={handleCardButtonClick}
-          customStyling="cardButton__btn_lg"
-        />
+        <button className="cardButton__btn_lg" onClick={handleCardButtonClick}>
+          "Add+"
+        </button>
       </div>
       <div className="cardTimePrice__div_lg">
         <span>{price}</span>
