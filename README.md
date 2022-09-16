@@ -1,4 +1,4 @@
-#Itinerary Maker
+# Itinerary Maker
 This is an exercise to practice! :)
 
 # Getting Started with Create React App
