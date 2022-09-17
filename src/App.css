@@ -17,8 +17,19 @@ body {
     display: flex; 
     flex-direction: row;
     justify-content: flex-start;
-    column-gap: 20%;
+    column-gap: 10rem;
+    width: 80rem;
+    box-sizing: border-box; 
 }
+
+.attractionsCollection__div_lg {
+    width: 30rem;
+}
+
+.itineraryCollection__div_lg {
+    width: 30rem;
+}
+
 
 /* .itineraryCollection__div_lg {
 

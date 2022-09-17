@@ -116,7 +116,7 @@ function App() {
       </header>
       <hr />
       <main className="mainCardCollection__main_lg">
-        <div>
+        <div className="attractionsCollection__div_lg">
           <h2>Available Attractions</h2>
           {availableAttractions.map((place, id) => {
             {
