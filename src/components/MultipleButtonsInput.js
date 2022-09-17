@@ -1,7 +1,6 @@
 /* eslint-disable */
 import "./MultipleButtonsInput.css";
 export default function MultipleButtonsInput({
-  title,
   buttonOptions,
   handleClick,
   className,
@@ -9,7 +8,6 @@ export default function MultipleButtonsInput({
 }) {
   return (
     <>
-      <span>{title}</span>
       {buttonOptions.map((name, index) => {
         return (
           <button

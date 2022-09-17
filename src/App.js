@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
 import "./App.css";
-import DropdownInput from "./components/DropdownInput";
+import DropdownInput from "./genericComponents/DropdownInput";
 import data from "./data.json";
 import { TimeOptions, PriceOptions } from "./options/Options";
 import MultipleButtonsInput from "./components/MultipleButtonsInput";
@@ -87,15 +87,16 @@ function App() {
       <h1>Welcome to Paris</h1>
       <header>
         <span>
+          <span>Target Amount of Time: </span>
           <DropdownInput
             handleChange={handleChangeHours}
-            title="target Amount of Time: "
             options={TimeOptions}
+            optionsSuffix="hour"
           />
         </span>
         <span className="price__span_lg">
+          <span>Price:</span>
           <MultipleButtonsInput
-            title="Price: "
             buttonOptions={PriceOptions}
             handleClick={handlePriceClicked}
             className="multiple__button_lg"
