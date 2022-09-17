@@ -117,13 +117,13 @@ function App() {
       <main className="mainCardCollection__main_lg">
         <div>
           <h2>Available Attractions</h2>
-          {availableAttractions.map((place) => {
+          {availableAttractions.map((place, id) => {
             {
               /* User unable to add attractions if the currTime is larger than the target time */
             }
             return (
               <Card
-                key={place.name}
+                key={id}
                 name={place.name}
                 time={place.time}
                 price={PriceOptions[place.price]}
@@ -141,10 +141,10 @@ function App() {
         </div>
         <div className="itineraryCollection__div_lg">
           <h2>Current Itinerary</h2>
-          {currentItinerary.map((place) => {
+          {currentItinerary.map((place, id) => {
             return (
               <Card
-                key={place.name}
+                key={id}
                 name={place.name}
                 time={place.time}
                 price={PriceOptions[place.price]}
