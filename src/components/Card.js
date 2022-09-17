@@ -6,13 +6,14 @@ export default function Card({
   time,
   description,
   handleCardButtonClick,
-  buttonName
+  buttonName,
+  disabled
 }) {
   return (
     <div className="cardCollection__div_lg">
       <div className="cardHeader__div_lg">
         <h3>{name}</h3>
-        <button className="cardButton__btn_lg" onClick={() => handleCardButtonClick(name)}>
+        <button className="cardButton__btn_lg" onClick={() => handleCardButtonClick(name)} disabled={disabled}>
           {buttonName}
         </button>
       </div>

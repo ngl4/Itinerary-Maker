@@ -96,6 +96,7 @@ function App() {
                 description={place.description}
                 handleCardButtonClick={addItinerary}
                 buttonName="Add+"
+                disabled={targetTime ? false : true}
               />
             );
           })}
