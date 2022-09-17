@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import DropdownInput from "./components/DropdownInput";
 import data from "./data.json";
@@ -8,7 +8,7 @@ import MultipleButtonsInput from "./components/MultipleButtonsInput";
 import Card from "./components/Card";
 
 function App() {
-  const [totalTime, setTotalTime] = useState(0);
+  const [targetTime, setTargetTime] = useState(0);
   const [currItineraryTime, setCurrItineraryTime] = useState(0);
   const [targetPrice, setTargetPrice] = useState(0);
   const [selectedPrice, setSelectedPrice] = useState("");
@@ -17,10 +17,25 @@ function App() {
   );
   const [currentItinerary, setCurrentItinerary] = useState([]);
 
-  //TODO: Accumulated Time (inc Current Time)
+  useEffect(() => {
+    const updateAttractionsByPrice = (price) => {
+      const matchingPriceAttractions = availableAttractions.filter(
+        (attraction) => attraction.price === price
+      );
+      const otherAttractions = availableAttractions.filter(
+        (attraction) => attraction.price !== price
+      );
+      const updatedAttractionsByPrice = [
+        ...matchingPriceAttractions,
+        ...otherAttractions,
+      ];
+      setAvailableAttractions(updatedAttractionsByPrice);
+    };
+    updateAttractionsByPrice(targetPrice);
+  }, [targetPrice]);
 
   const handleChangeHours = (e) => {
-    setTotalTime(e.target.value);
+    setTargetTime(e.target.value);
   };
 
   const handlePriceClicked = (priceText, priceValue) => {
@@ -64,7 +79,7 @@ function App() {
         <span>
           <DropdownInput
             handleChange={handleChangeHours}
-            title="Total Amount of Time: "
+            title="target Amount of Time: "
             options={TimeOptions}
           />
         </span>
@@ -79,7 +94,7 @@ function App() {
         </span>
         <span className="price__span_lg">
           <strong>Current Time:</strong> {currItineraryTime}{" "}
-          <strong>Target Time:</strong> {totalTime}
+          <strong>Target Time:</strong> {targetTime}
         </span>
       </header>
       <hr />
