@@ -1,6 +1,10 @@
 # Itinerary Maker
 This is an exercise to practice! :)
 
+### Demo
+
+![picture alt](https://github.com/ngl4/Itinerary-Maker/blob/main/media/itineraryMakerDemo.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
