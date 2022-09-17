@@ -5,6 +5,10 @@ This is an exercise to practice! :)
 
 ![picture alt](https://github.com/ngl4/Itinerary-Maker/blob/main/media/itineraryMakerDemo.gif)
 
+<hr />
+Special Thanks to Formation Mentors for all the constructive feedbacks! 
+<hr />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
