@@ -1,4 +1,5 @@
 import "./Card.css";
+import Button from "../genericComponents/Button";
 
 export default function Card({
   name,
@@ -13,9 +14,12 @@ export default function Card({
     <div className="cardCollection__div_lg">
       <div className="cardHeader__div_lg">
         <h3>{name}</h3>
-        <button className="cardButton__btn_lg" onClick={() => handleCardButtonClick(name)} disabled={disabled}>
-          {buttonName}
-        </button>
+        <Button
+          className="cardButton__btn_lg"
+          handleClick={() => handleCardButtonClick(name)}
+          disabled={disabled}
+          text={buttonName}
+        />
       </div>
       <div className="cardTimePrice__div_lg">
         <span>{price}</span>

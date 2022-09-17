@@ -1,5 +1,6 @@
 /* eslint-disable */
 import "./MultipleButtonsInput.css";
+import Button from "../genericComponents/Button";
 export default function MultipleButtonsInput({
   buttonOptions,
   handleClick,
@@ -10,15 +11,14 @@ export default function MultipleButtonsInput({
     <>
       {buttonOptions.map((name, index) => {
         return (
-          <button
+          <Button
             key={index}
-            onClick={() => handleClick(name, index)}
+            handleClick={() => handleClick(name, index)}
             className={
               className + ` ` + `${selectedPrice === name ? "selected" : ""}`
             }
-          >
-            {name}
-          </button>
+            text={name}
+          />
         );
       })}
     </>
