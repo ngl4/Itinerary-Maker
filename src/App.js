@@ -22,43 +22,40 @@ function App() {
   const handleChangeHours = (e) => {
     setTotalTime(e.target.value);
   };
+
   const handlePriceClicked = (priceText, priceValue) => {
     setTargetPrice(priceValue);
     setSelectedPrice(priceText);
   };
+
   const addItinerary = (place) => {
-    let tempAvailableAttractions = [...availableAttractions];
-    let tempItinerary = [...currentItinerary];
-
-    const found = tempAvailableAttractions.find(
-      (attraction) => attraction.name === place
-    );
-    const foundIndex = tempAvailableAttractions.findIndex(
+    const found = availableAttractions.find(
       (attraction) => attraction.name === place
     );
 
-    tempAvailableAttractions.splice(foundIndex, 1);
+    const updatedAvailableAttractions = availableAttractions.filter(
+      (attraction) => attraction.name !== place
+    );
 
-    tempItinerary.push(found);
+    const updatedItinerary = [found, ...currentItinerary];
 
-    setCurrentItinerary(tempItinerary);
-    setAvailableAttractions(tempAvailableAttractions);
+    setAvailableAttractions(updatedAvailableAttractions);
+    setCurrentItinerary(updatedItinerary);
   };
-  const removeItinerary = (place) => {
-    let tempAvailableAttractions = [...availableAttractions];
-    let tempItinerary = [...currentItinerary];
 
-    const found = tempItinerary.find((attraction) => attraction.name === place);
-    const foundIndex = tempItinerary.findIndex(
+  const removeItinerary = (place) => {
+    const found = currentItinerary.find(
       (attraction) => attraction.name === place
     );
 
-    tempItinerary.splice(foundIndex, 1);
+    const updatedItinerary = currentItinerary.filter(
+      (attraction) => attraction.name !== place
+    );
 
-    tempAvailableAttractions.push(found);
+    const updatedAvailableAttractions = [found, ...availableAttractions];
 
-    setCurrentItinerary(tempItinerary);
-    setAvailableAttractions(tempAvailableAttractions);
+    setAvailableAttractions(updatedAvailableAttractions);
+    setCurrentItinerary(updatedItinerary);
   };
   return (
     <div>
