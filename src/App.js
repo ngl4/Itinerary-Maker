@@ -9,7 +9,7 @@ import Card from "./components/Card";
 
 function App() {
   const [targetTime, setTargetTime] = useState(0);
-  const [currItineraryTime, setCurrItineraryTime] = useState(0);
+  const [currTime, setCurrTime] = useState(0);
   const [targetPrice, setTargetPrice] = useState(0);
   const [selectedPrice, setSelectedPrice] = useState("");
   const [availableAttractions, setAvailableAttractions] = useState(
@@ -48,13 +48,18 @@ function App() {
       (attraction) => attraction.name === place
     );
 
+    //update current Time
+    const updatedTime = currTime + found.time;
+    setCurrTime(updatedTime);
+
+    //update Available attractions
     const updatedAvailableAttractions = availableAttractions.filter(
       (attraction) => attraction.name !== place
     );
-
-    const updatedItinerary = [found, ...currentItinerary];
-
     setAvailableAttractions(updatedAvailableAttractions);
+
+    //update current itinerary attractions
+    const updatedItinerary = [found, ...currentItinerary];
     setCurrentItinerary(updatedItinerary);
   };
 
@@ -63,14 +68,19 @@ function App() {
       (attraction) => attraction.name === place
     );
 
+    //update current Time
+    const updatedTime = currTime - found.time;
+    setCurrTime(updatedTime);
+
+    //update current itinerary attractions
     const updatedItinerary = currentItinerary.filter(
       (attraction) => attraction.name !== place
     );
-
-    const updatedAvailableAttractions = [found, ...availableAttractions];
-
-    setAvailableAttractions(updatedAvailableAttractions);
     setCurrentItinerary(updatedItinerary);
+
+    //update Available attractions
+    const updatedAvailableAttractions = [found, ...availableAttractions];
+    setAvailableAttractions(updatedAvailableAttractions);
   };
   return (
     <div>
@@ -93,8 +103,14 @@ function App() {
           />
         </span>
         <span className="price__span_lg">
-          <strong>Current Time:</strong> {currItineraryTime}{" "}
-          <strong>Target Time:</strong> {targetTime}
+          <strong>Current Time:</strong>{" "}
+          {currTime <= Number(targetTime) ? (
+            currTime
+          ) : (
+            <span style={{ color: "red", fontWeight: "bold" }}>{currTime}</span>
+          )}{" "}
+          <strong>Target Time:</strong>{" "}
+          <span style={{ color: "green" }}>{targetTime}</span>
         </span>
       </header>
       <hr />
@@ -102,6 +118,9 @@ function App() {
         <div>
           <h2>Available Attractions</h2>
           {availableAttractions.map((place) => {
+            {
+              /* User unable to add attractions if the currTime is larger than the target time */
+            }
             return (
               <Card
                 key={place.name}
@@ -111,7 +130,11 @@ function App() {
                 description={place.description}
                 handleCardButtonClick={addItinerary}
                 buttonName="Add+"
-                disabled={targetTime ? false : true}
+                disabled={
+                  Number(targetTime) !== 0 && Number(targetTime) > currTime
+                    ? false
+                    : true
+                }
               />
             );
           })}
